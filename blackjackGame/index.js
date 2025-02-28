@@ -27,10 +27,15 @@ let message= ""
 // Store the message-el paragraph in a variable called messageEl
 let messageEl = document.getElementById("message-el")
 
+// Store the sum paragrph in a variable called sumEl
+let sumEl = document.getElementById("sum-el")
+
 // Create a startGame() function. Move the conditional 
 // below inside the body of the function
 
 function startGame(){
+
+    sumEl.textContent += sum
 
     if (sum <= 20){
         message = "Do you want to draw a new card? 🙂"
@@ -50,7 +55,7 @@ function startGame(){
      }   
 
     //  Display the message in the messageEl using messageEl.textContent
-    messageEl.textContent = messag
+    messageEl.textContent = message
     console.log(message)
      
      // CASH OUT!
