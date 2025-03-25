@@ -1,4 +1,3 @@
-
 let myLeads = []
 const inputEl = document.getElementById("input-el")
 const ulEl = document.getElementById("ul-el")
@@ -8,6 +7,8 @@ const inputBtn = document.getElementById("input-btn")
 inputBtn.addEventListener("click", function(){
     myLeads.push(inputEl.value)
     console.log(myLeads)
+    // Clear out the input field
+    inputEl.value = ""
     // 5. Call the renderLeads() function
     renderLeades()
 })
@@ -19,8 +20,9 @@ inputBtn.addEventListener("click", function(){
 function renderLeades(){
     let listItems = ""
     for(let x = 0; x < myLeads.length; x++){
+        // Wrapp the lead in an anchor tag (<a>) inside the <li>. Can I make the link open in a new tab?
         // 2. Add the item to the listItems variable instead of the ulEl. innerHTML
-        listItems += "<li>" + myLeads[x] + "</li>"
+        listItems += "<li> <a href='" +  myLeads[x]  + " ' target='_blank'>" + myLeads[x] + "</a></li>"
         console.log(listItems)
     }
     
@@ -30,4 +32,3 @@ function renderLeades(){
     // Why we do that, the simple way that 
     // "DOM manipulations has a cost" and if i can just manipulated one time is better than three 
 }
-
