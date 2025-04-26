@@ -1,0 +1,48 @@
+An Immediately Invoked Function Expression (IIFE) in JavaScript is a function that is defined and executed immediately after it's created.
+
+    💠You write a function.
+    💠You wrap it in parentheses () to turn it into an expression.
+    💠You immediately call it with another set of parentheses ().
+
+Example:
+
+    (function() {
+        console.log('IIFE runs immediately!');
+    })();
+
+
+💠The first () wraps the function, making it an expression (instead of a regular function declaration).
+
+💠The second () invokes the function right away.
+
+Why use IIFEs?
+
+    💠Encapsulation: Variables inside an IIFE don’t pollute the global scope.
+
+    💠Isolation: Keeps code private and avoids conflicts.
+
+    💠One-time setup: Perfect for code that should only run once (like configuration).
+
+1. Avoid polluting global scope
+    Imagine you have some variables you don't want leaking outside:
+
+    (function() {
+        const username = 'PlayerOne';
+        console.log(`Welcome, ${username}`);
+    })();
+
+    // console.log(username); // ❌ Error: username is not defined
+
+Why?
+    Because username is trapped inside the IIFE — it stays private.
+
+
+This is called an Immediately Invoked Function Expression, or IIFE for short.
+
+Let's break it down:
+
+
+Part	            Meaning
+()	                Wrapping a function inside parentheses makes it an expression (not a declaration).
+=> {}	            This is an arrow function with no name (anonymous function).
+() (after function)	These parentheses call the function immediately after it’s created.
